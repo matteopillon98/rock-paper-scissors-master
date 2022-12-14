@@ -90,14 +90,30 @@ header #scoreLabel{
     background-position: center;
 }
 
+#gameChoice{
+    grid-area: content;
+    display: none;
+}
+
 .btn_Game{
     width: 10rem;
     height: 10rem;
     border-radius: 10rem;
+    border: 10px solid var(--paper_Gradient);
     border-image-slice: 1;
     background-repeat: no-repeat;
     background-position: center;
 }
+
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.2);
+    }
+    
+    100% {
+      box-shadow: 0 0 0 80px rgba(255, 255, 255, 0);
+    }
+  }
 
 .btn_Game:active{
     position:relative;
