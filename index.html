@@ -3,21 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Barlow+Semi+Condensed">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -25,8 +15,31 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
+
 <body>
 
+  <header>
+    <h1>ROCK PAPER SCISSORS</h2>
+    <div id="scoreContainer">
+      <h2>SCORE</h3>      
+      <h3>123</h3>
+    </div>
+  </header>
+
+  <div id="game">
+    <button id="btn_Rock">
+      <svg class="svg_Icon">
+      </svg>
+      ROCK
+    </button>
+    
+    <button id="btn_Paper">PAPER</button>
+    <button id="btn_Scissors">SCISSORS</button>
+  </div>
+
+  <div id="rules">
+    <button id="btn_Rules">RULES</button>
+  </div>
 
   
   <div class="attribution">
