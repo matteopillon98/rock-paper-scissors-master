@@ -11,27 +11,33 @@
     --var-direction: 'ltr';
     --var-writing-mode: 'horizontal-tb';
 }
+html, body {
+    height: 100%;
+    width: 100%;
+}
 
-body{
+body {
     background:  radial-gradient(hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
     color: #FFF;
     background-repeat: no-repeat;
     font-family: Barlow Semi Condensed;
-
+    font-weight: 700;
     display: grid;
     direction: var(--var-direction);
     writing-mode: var(--var-writing-mode);
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr;
+    grid-template-rows: 2fr 5fr 1fr 1fr;
     grid-template-areas: 
-        "header  header"
-        "content content"
-        "footer footer";
+        ". header header header ."
+        ". . content . ."
+        ". . . . rules"
+        ". . footer . .";
     gap: 10px;
     background-color: var(--color-stroke);
     padding: .5em;
     border-radius: 3px;
-    max-inline-size: 500px;
+    max-inline-size: 60%;
+    margin: 0 auto;
 }
 
 .svg_Icon{
@@ -41,48 +47,88 @@ body{
 }
 
 header{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     grid-area: header;
     border: 0.3rem solid;
     border-radius: var(--border_Radius);
     border-color: var(--header_Outline);
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
+    align-items:center;
+}
+
+#scoreContainer{
+    background-color: #fff;
+    border-radius: var(--border_Radius);
+    padding: 1rem 2rem 1rem 2rem;
+    text-align: center;
+}
+
+header h1{
+    display: block;
 }
 
 header h2{
     color: #0000FF;
     font-weight: 600;
-
+    font-size: 1em;
 }
 
-header h3{
-    color: var(--score_Color);
-    font-weight: 700;
-
-}
-
-#scoreContainer{
-    display: flex;
-    background-color: #fff;
-    border-radius: var(--border_Radius);
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 3rem 1rem 3rem;
+header #scoreLabel{
+    font-size: 3em;
+    color: var(--dark_Color);
+    font-weight: 800;
 }
 
 #game{
     grid-area: content;
+    display: flex;
+    background-image: url("images/bg-triangle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-#btn_Rock{
+.btn_Game{
     width: 10rem;
     height: 10rem;
     border-radius: 10rem;
-    border: 1rem solid;
-    background-color: var(--rock_Gradient);
+    border-image-slice: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn_Game:active{
+    position:relative;
+    top:4px;
+}
+
+#btn_Rock{
+    background-image: url("images/icon-rock.svg");
+}
+
+#btn_Paper{
+    align-self: flex-end;
+    background-image: url("images/icon-paper.svg");
+}
+
+#btn_Scissors{
+    background-image: url("images/icon-scissors.svg");
+}
+#rules{
+    grid-area: rules;
 }
 
 #btn_Rules{
+    padding: 1rem 3rem 1rem 3rem;
+    border: 0.1rem solid;
+    border-radius: var(--border_Radius);
+    border-color:#fff;
+    color: #FFF;
+    background: transparent;
+}
+
+.attribution{
     grid-area: footer;
 }

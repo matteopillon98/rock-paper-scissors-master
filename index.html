@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://fonts.google.com/specimen/Barlow+Semi+Condensed">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script type="text/javascript" src="scripts.js"></script>
 
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
@@ -19,26 +20,25 @@
 <body>
 
   <header>
-    <h1>ROCK PAPER SCISSORS</h2>
+    <h1>
+      ROCK </br>
+      PAPER </br>
+      SCISSORS 
+    </h1>
     <div id="scoreContainer">
-      <h2>SCORE</h3>      
-      <h3>123</h3>
+      <h2>SCORE</h2>      
+      <label id="scoreLabel">0</label>
     </div>
   </header>
 
   <div id="game">
-    <button id="btn_Rock">
-      <svg class="svg_Icon">
-      </svg>
-      ROCK
-    </button>
-    
-    <button id="btn_Paper">PAPER</button>
-    <button id="btn_Scissors">SCISSORS</button>
+    <button class="btn_Game" id="btn_Rock" onclick="gameMatch('rock')"></button>
+    <button class="btn_Game" id="btn_Paper" onclick="gameMatch('paper')"></button>
+    <button  class="btn_Game" id="btn_Scissors" onclick="gameMatch('scissor')"></button>
   </div>
 
   <div id="rules">
-    <button id="btn_Rules">RULES</button>
+    <button id="btn_Rules"  onclick="" >RULES</button>
   </div>
 
   
