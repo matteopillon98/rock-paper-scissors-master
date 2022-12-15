@@ -110,37 +110,64 @@ header #scoreLabel{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 4rem;
-    filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 5.25));
+    opacity: 0.9;
 }
 
-@keyframes pulse-animation {
+.btn_Game:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn_Game:active{
+  transform: translateY(4px);
+}
+
+@keyframes pulse-animation-paper {
     0% {
-      box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.2);
+      box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35), 0 0 0 0px rgba(255, 255, 255, 0.2),0px 5px 1px 2px rgba(0, 0, 255, 0.65);
     }
     
     100% {
-      box-shadow: 0 0 0 60px rgba(255, 255, 255, 0);
+      box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35), 0 0 0 60px rgba(255, 255, 255, 0),0px 5px 1px 2px rgba(0, 0, 255, 0.65);
     }
   }
 
-.btn_Game:active{
-    position:relative;
-    top:4px;
-}
+  @keyframes pulse-animation-scissors {
+    0% {
+      box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35), 0 0 0 0px rgba(255, 255, 255, 0.2),0px 5px 1px 2px rgb(255 170 0 / 65%);
+    }
+    
+    100% {
+      box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35), 0 0 0 60px rgba(255, 255, 255, 0),0px 5px 1px 2px rgb(255 170 0 / 65%);
+    }
+  }
+
+  @keyframes pulse-animation-rock {
+    0% {
+      box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35), 0 0 0 0px rgba(255, 255, 255, 0.2),0px 5px 1px 2px rgb(255 0 0 / 65%);
+    }
+    
+    100% {
+      box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35), 0 0 0 60px rgba(255, 255, 255, 0),0px 5px 1px 2px rgb(255 0 0 / 65%);
+    }
+  }
 
 #btn_Rock{
     background-image: url("images/icon-rock.svg");
     border: 15px solid #fc1c1c;
+    box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35),0px 5px 1px 2px rgb(255 0 0 / 65%);
     align-self: flex-end;
 }
 
 #btn_Paper{
-    border: 15px solid blue;
+    border: 15px solid #0000ff;
+    box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35),0px 5px 1px 2px rgba(0, 0, 255, 0.65);
     background-image: url("images/icon-paper.svg");
 }
 
 #btn_Scissors{
     border: 15px solid rgb(255, 170, 0);
+    box-shadow: inset 0px 5px 1px 2px rgba(93, 93, 93, 0.35),0px 5px 1px 2px rgb(255 170 0 / 65%);
     background-image: url("images/icon-scissors.svg");
 }
 #rules{

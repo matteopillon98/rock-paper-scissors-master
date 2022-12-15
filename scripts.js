@@ -1,5 +1,6 @@
 
 let [computer_score,user_score]=[0,0];
+const mq = window.matchMedia( "(min-width: 856px)" );
 
 const winning_choices = {
     rock: 'scissors',
@@ -41,21 +42,16 @@ function gameMatch (userChoice){
 }
 
 function rematch(){
-    document.getElementById('game').style.display= "flex";
+    if(mq.matches){
+        document.getElementById('game').style.display= "flex";
+    }
+    else{
+        document.getElementById('game').style.display= "grid";
+    }
     document.getElementById('gameChoice').style.display= "none";
     document.getElementById('playerChoice').innerHTML = "";
     document.getElementById('computerChoice').innerHTML = "";
 }
-
-function mobileChangeWindow() {
-    let width = window.matchMedia("(min-width: 856px)")
-    if (width.matches) { 
-        document.getElementById('game').style.display= "flex";
-    } else {
-        document.getElementById('game').style.display= "grid";
-    }
-  }
-  
 
 function appendElement(div, typeButton, titleText, animation){
     let button = document.createElement("button");
@@ -65,18 +61,23 @@ function appendElement(div, typeButton, titleText, animation){
     button.setAttribute("class","btn_Game");
     if(typeButton == 'rock'){
         button.setAttribute("id","btn_Rock");
+        if(animation){
+            button.style.setProperty("animation", "pulse-animation-rock 2s infinite");
+        }
     }
 
     else if(typeButton == 'scissors'){
         button.setAttribute("id","btn_Scissors");
+        if(animation){
+            button.style.setProperty("animation", "pulse-animation-scissors 2s infinite");
+        }
     }
 
     else if(typeButton == 'paper'){
         button.setAttribute("id","btn_Paper");
-    }
-
-    if(animation){
-        button.style.setProperty("animation", "pulse-animation 2s infinite");
+        if(animation){
+            button.style.setProperty("animation", "pulse-animation-paper 2s infinite");
+        }
     }
 
     div.appendChild(title)
