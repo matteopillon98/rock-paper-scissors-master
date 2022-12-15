@@ -32,8 +32,8 @@
   </header>
 
   <div id="game">
-    <button class="btn_Game" id="btn_Rock" onclick="gameMatch('rock')"></button>
     <button class="btn_Game" id="btn_Paper" onclick="gameMatch('paper')"></button>
+    <button class="btn_Game" id="btn_Rock" onclick="gameMatch('rock')"></button>
     <button  class="btn_Game" id="btn_Scissors" onclick="gameMatch('scissors')"></button>
   </div>
 
@@ -53,7 +53,17 @@
   </div>
 
   <div id="rules">
-    <button id="btn_Rules">RULES</button>
+    <button id="btn_Rules" onclick="showRules()">RULES</button>
+  </div>
+
+  <div id="rulesCard">
+      <div id="rulesImage">
+        <h3>RULES</h3>
+        <button id="btn_CloseRules" onclick="hideRules()">
+          <img src="images/icon-close.svg">
+        </button>
+        <img id="img_Rules" src="images/image-rules.svg" alt="RUles" style="width:100%">
+      </div>
   </div>
 
   
