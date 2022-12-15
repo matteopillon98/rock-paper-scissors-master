@@ -11,9 +11,10 @@
     --var-direction: 'ltr';
     --var-writing-mode: 'horizontal-tb';
 }
-html, body {
-    height: 100%;
+body,html{
     width: 100%;
+    height: 100%;
+    min-width: 420px;
 }
 
 body {
@@ -22,36 +23,21 @@ body {
     background-repeat: no-repeat;
     font-family: Barlow Semi Condensed;
     font-weight: 700;
-    display: grid;
-    direction: var(--var-direction);
-    writing-mode: var(--var-writing-mode);
-    grid-template-columns: 1fr 3fr 1fr 0.5fr;
-    grid-template-rows: 1fr 5fr 1fr 0.5fr;
-    grid-template-areas: 
-        " header header header ."
-        " . content . ."
-        " . . . rules"
-        " . footer . .";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--color-stroke);
-    margin: .5em;
-    max-inline-size: 60%;
     margin: 0 auto;
-}
-
-.svg_Icon{
-    background-image: url(images/icon-rock.svg);
-    width: 25px;
-    height: 25px;
 }
 
 header{
     margin-top: 2rem;
-    margin-bottom: 3rem;
-    grid-area: header;
     border: 0.3rem solid;
     border-radius: var(--border_Radius);
     border-color: var(--header_Outline);
     padding: 1rem 1.5rem 1rem 1.5rem;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items:center;
@@ -77,26 +63,20 @@ header #scoreLabel{
 }
 
 #game{
-    grid-area: content;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
     background-image: url("images/bg-triangle.svg");
-    background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 60%;
 }
 
 #gameChoice{
     display: none;
-    grid-area: content;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
     gap: 2rem;
-}
-
-#gameChoice h3{
-    margin-bottom: 3rem;
 }
 
 #matchResult{
@@ -104,12 +84,12 @@ header #scoreLabel{
 }
 
 .btn_Game{
-    width: 10rem;
-    height: 10rem;
-    border-radius: 10rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 8rem;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 4rem;
+    background-size: 3rem;
     filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 5.25));
 }
 
@@ -130,21 +110,26 @@ header #scoreLabel{
 
 #btn_Rock{
     background-image: url("images/icon-rock.svg");
-    border: 15px solid #fc1c1c;
-    align-self: flex-end;
+    border: 10px solid #fc1c1c;    
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 #btn_Paper{
-    border: 15px solid blue;
+    grid-column-start: 1;
+    grid-column-end:2;
+    grid-area: "paper";
+    border: 10px solid blue;
     background-image: url("images/icon-paper.svg");
 }
 
 #btn_Scissors{
-    border: 15px solid rgb(255, 170, 0);
+    grid-column-start: 3;
+    grid-column-end:4;
+    grid-area: "scissors";
+    border: 10px solid rgb(255, 170, 0);
     background-image: url("images/icon-scissors.svg");
-}
-#rules{
-    grid-area: rules;
 }
 
 #btn_Rules{
@@ -168,10 +153,6 @@ header #scoreLabel{
     white-space: nowrap;
     text-align: center;
     padding: 1rem 2rem 1rem 2rem;
-}
-
-.attribution{
-    grid-area: footer;
 }
 
 h3{
@@ -203,7 +184,6 @@ h3{
     position: fixed;
     display: none;
     width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     right: 0;

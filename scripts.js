@@ -19,18 +19,20 @@ function gameMatch (userChoice){
 
     if(userChoice === computerChoice){
         document.getElementById('matchResult').textContent="DRAW";
+        document.getElementById('btn_playAgain').style.color="rgb(255, 170, 0)";
     } 
     else if(Object.entries(winning_choices).find(([key, value]) => key === userChoice && value === computerChoice)){
         document.getElementById('matchResult').textContent="YOU WIN";
+        document.getElementById('btn_playAgain').style.color="#0000FF";
         playerAnimation = true;
         user_score++;
     }
     else{
         document.getElementById('matchResult').textContent="YOU LOSE";
+        document.getElementById('btn_playAgain').style.color="#FF0000";
         computerAnimation = true;
         user_score--;
     }
-
 
     appendElement(playerDiv, userChoice,"YOU CHOOSE",playerAnimation);
     appendElement(computerDiv, computerChoice, "THE HOUSE PICKED",computerAnimation);
@@ -44,6 +46,16 @@ function rematch(){
     document.getElementById('playerChoice').innerHTML = "";
     document.getElementById('computerChoice').innerHTML = "";
 }
+
+function mobileChangeWindow() {
+    let width = window.matchMedia("(min-width: 856px)")
+    if (width.matches) { 
+        document.getElementById('game').style.display= "flex";
+    } else {
+        document.getElementById('game').style.display= "grid";
+    }
+  }
+  
 
 function appendElement(div, typeButton, titleText, animation){
     let button = document.createElement("button");
@@ -79,3 +91,15 @@ function hideRules (){
     document.getElementById("rulesCard").style.display = "none";
 }
 
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    var isEscape = false;
+    if ("key" in evt) {
+        isEscape = (evt.key === "Escape" || evt.key === "Esc");
+    } else {
+        isEscape = (evt.keyCode === 27);
+    }
+    if (isEscape) {
+        hideRules();
+    }
+};
