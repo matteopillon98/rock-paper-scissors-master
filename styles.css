@@ -32,10 +32,8 @@ body {
         ". . content . ."
         ". . . . rules"
         ". . footer . .";
-    gap: 10px;
     background-color: var(--color-stroke);
-    padding: .5em;
-    border-radius: 3px;
+    margin: .5em;
     max-inline-size: 60%;
     margin: 0 auto;
 }
@@ -66,10 +64,6 @@ header{
     text-align: center;
 }
 
-header h1{
-    display: block;
-}
-
 header h2{
     color: #0000FF;
     font-weight: 600;
@@ -85,20 +79,28 @@ header #scoreLabel{
 #game{
     grid-area: content;
     display: flex;
+    flex-direction: row;
     background-image: url("images/bg-triangle.svg");
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #gameChoice{
-    grid-area: content;
     display: none;
+    grid-area: content;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+
+#matchResult{
+    font-size: 2em;
 }
 
 .btn_Game{
-    width: 10rem;
-    height: 10rem;
-    border-radius: 10rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 8rem;
     border: 10px solid var(--paper_Gradient);
     border-image-slice: 1;
     background-repeat: no-repeat;
@@ -145,6 +147,25 @@ header #scoreLabel{
     background: transparent;
 }
 
+#playAgain{
+    text-align: center;
+}
+
+#btn_playAgain{
+    background-color: #FFF;
+    color: #FF0000;
+    border-radius: var(--border_Radius);
+    font-size: 1.2em;
+    white-space: nowrap;
+    text-align: center;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
 .attribution{
     grid-area: footer;
+}
+
+h3{
+    white-space: nowrap;
+    text-align: center;
 }
