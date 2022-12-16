@@ -14,6 +14,7 @@ function gameMatch(userChoice) {
         Math.floor(Math.random() * Object.keys(winning_choices).length)
       ]
     ];
+
   document.getElementById("game").style.display = "none";
   document.getElementById("gameChoice").style.display = "flex";
   let playerAnimation = false;

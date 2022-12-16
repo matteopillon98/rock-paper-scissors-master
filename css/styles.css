@@ -14,7 +14,7 @@
 html,
 body {
   height: 100%;
-  width: 100%;
+  min-height: 720px;
 }
 
 body {
@@ -34,15 +34,8 @@ body {
     " . . . rules"
     " . footer . .";
   background-color: var(--color-stroke);
-  margin: 0.5em;
-  max-inline-size: 60%;
+  max-width: 80%;
   margin: 0 auto;
-}
-
-.svg_Icon {
-  background-image: url(../images/icon-rock.svg);
-  width: 25px;
-  height: 25px;
 }
 
 header {
@@ -68,11 +61,11 @@ header {
 header h2 {
   color: #0000ff;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 header #scoreLabel {
-  font-size: 3em;
+  font-size: 3rem;
   color: var(--dark_Color);
   font-weight: 800;
 }
@@ -81,8 +74,9 @@ header #scoreLabel {
   grid-area: content;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   background-image: url("../images/bg-triangle.svg");
-  background-size: 60%;
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -101,7 +95,7 @@ header #scoreLabel {
 }
 
 #matchResult {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .btn_Game {
@@ -201,7 +195,7 @@ header #scoreLabel {
   background-color: #fff;
   color: #ff0000;
   border-radius: var(--border_Radius);
-  font-size: 1.2em;
+  font-size: 1.2rem;
   white-space: nowrap;
   text-align: center;
   padding: 1rem 2rem 1rem 2rem;
@@ -255,7 +249,7 @@ h3 {
   left: 50%;
   display: flex;
   flex-wrap: wrap;
-  padding: 1em;
+  padding: 1rem;
   justify-content: space-between;
   background-color: #fff;
   color: #000;
