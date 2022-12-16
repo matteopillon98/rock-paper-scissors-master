@@ -1,4 +1,13 @@
 let [computer_score, user_score] = [0, 0];
+window.onload = function getSavedScore() {
+  if (sessionStorage.getItem("score")) {
+    user_score = sessionStorage.getItem("score");
+    document.getElementById("scoreLabel").innerHTML = user_score;
+  } else {
+    user_score = 0;
+    document.getElementById("scoreLabel").innerHTML = user_score;
+  }
+};
 const mq = window.matchMedia("(min-width: 856px)");
 
 const winning_choices = {
@@ -43,6 +52,7 @@ function gameMatch(userChoice) {
   }
 
   appendElement(playerDiv, userChoice, "YOU CHOOSE", playerAnimation);
+
   appendElement(
     computerDiv,
     computerChoice,
@@ -50,6 +60,7 @@ function gameMatch(userChoice) {
     computerAnimation
   );
 
+  sessionStorage.setItem("score", user_score);
   document.getElementById("scoreLabel").innerHTML = user_score;
 }
 

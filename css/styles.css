@@ -34,7 +34,7 @@ body {
     " . . . rules"
     " . footer . .";
   background-color: var(--color-stroke);
-  max-width: 80%;
+  max-width: 70%;
   margin: 0 auto;
 }
 
@@ -274,4 +274,12 @@ h3 {
 
 #img_Rules {
   flex-grow: 2;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
